@@ -12,6 +12,7 @@ create_tables_latest:
   script:
   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
   - export PGPASSWORD=$POSTGRES_PASSWORD
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT version();"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/create_db.sql
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/insert_dummy_data.sql
@@ -21,6 +22,7 @@ create_tables_961:
   script:
   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
   - export PGPASSWORD=$POSTGRES_PASSWORD
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT version();"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/create_db.sql
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/insert_dummy_data.sql
@@ -31,6 +33,7 @@ create_tables_955:
   script:
   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
   - export PGPASSWORD=$POSTGRES_PASSWORD
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT version();"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/create_db.sql
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/insert_dummy_data.sql
