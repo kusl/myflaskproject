@@ -1,0 +1,1 @@
+insert into mcny.users(gen_random_uuid(), "Michael Christopher");
