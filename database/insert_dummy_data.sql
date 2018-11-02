@@ -1,1 +1,3 @@
-insert into mcny.users(gen_random_uuid(), "Michael Christopher");
+insert into mcny.users (leagal_name) values ("Michael Christopher");
+
+insert into mcny.videos (payload) values (('{ "kind": "youtube#videoListResponse", "etag": "\"XI7nbFXulYBIpL0ayR_gDh3eu1k/cQyOw3szFwotLxkHwhwluLjXzok\"", "pageInfo": { "totalResults": 1, "resultsPerPage": 1 }, "items": [ { "kind": "youtube#video", "etag": "\"XI7nbFXulYBIpL0ayR_gDh3eu1k/qgljc9LkiTy_UC3tf46se-v_VW8\"", "id": "ePpPVE-GGJw", "contentDetails": { "duration": "PT4M14S", "dimension": "2d", "definition": "hd", "caption": "true", "licensedContent": true, "projection": "rectangular" }, "statistics": { "viewCount": "411234679", "likeCount": "2385869", "dislikeCount": "373313", "favoriteCount": "0", "commentCount": "716747" } } ] }');
