@@ -8,6 +8,6 @@ create table mcny.person (
 
 create table mcny.videos (
     id uuid,
-    timestamp without time zone default (now() at time zone 'utc'),
+    video_time timestamp without time zone default (now() at time zone 'utc'),
     payload jsonb
 );
