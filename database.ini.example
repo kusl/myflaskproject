@@ -3,3 +3,6 @@ host=localhost
 database=my_db
 user=postgres
 password=root
+
+[youtube]
+key=nice_try

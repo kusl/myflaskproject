@@ -1,10 +1,24 @@
 #!/usr/bin/python
+import json
+
 import psycopg2
+import requests
 
-from config import config
+from config import config, youtube
 
 
-def connect():
+def get_data():
+    url = "https://www.googleapis.com/youtube/v3/videos"
+    parameters = {'part': 'statistics',
+                  'id': 'c7rCyll5AeY',
+                  'key': youtube()['key']}
+    r = requests.get(url=url, params=parameters)
+    data = r.json()
+    print(data)
+    return data
+
+
+def connect(input):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -20,11 +34,10 @@ def connect():
 
         # execute a statement
         print('PostgreSQL database version:')
-        cur.execute('SELECT version()')
-
-        # display the PostgreSQL database server version
-        db_version = cur.fetchone()
-        print(db_version)
+        cur.execute('SELECT version();')
+        cur.execute('create table if not exists videos (payload jsonb);')
+        cur.execute(f"insert into videos values {json.dumps(input)}")
+        cur.execute('select * from videos;')
 
         # close the communication with the PostgreSQL
         cur.close()
@@ -37,4 +50,5 @@ def connect():
 
 
 if __name__ == '__main__':
-    connect()
+    input = get_data()
+    connect(input)
