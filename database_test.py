@@ -36,8 +36,6 @@ def connect(input):
         cur.execute('SELECT version();')
         cur.execute('create table if not exists videos (payload jsonb);')
         insert_string = f"insert into videos values ('{input}')"
-        print(insert_string)
-        exit()
         cur.execute(insert_string)
         cur.execute('select * from videos;')
 
