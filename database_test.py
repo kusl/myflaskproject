@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import json
 
 import psycopg2
 import requests
@@ -36,7 +35,7 @@ def connect(input):
         print('PostgreSQL database version:')
         cur.execute('SELECT version();')
         cur.execute('create table if not exists videos (payload jsonb);')
-        cur.execute(f"insert into videos values {json.dumps(input)}")
+        cur.execute(f"insert into videos values ('{input}')")
         cur.execute('select * from videos;')
 
         # close the communication with the PostgreSQL
