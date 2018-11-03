@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import json
+import time
 
 import psycopg2
 import requests
@@ -51,5 +52,7 @@ def connect(input):
 
 
 if __name__ == '__main__':
-    input = get_data()
-    connect(input)
+    while True:
+        time.sleep(10)
+        input = get_data()
+        connect(input)
