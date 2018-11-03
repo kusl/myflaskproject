@@ -35,7 +35,10 @@ def connect(input):
         print('PostgreSQL database version:')
         cur.execute('SELECT version();')
         cur.execute('create table if not exists videos (payload jsonb);')
-        cur.execute(f"insert into videos values ('{input}')")
+        insert_string = f"insert into videos values ('{input}')"
+        print(insert_string)
+        exit()
+        cur.execute(insert_string)
         cur.execute('select * from videos;')
 
         # close the communication with the PostgreSQL
