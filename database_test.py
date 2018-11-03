@@ -20,7 +20,7 @@ def connect():
 
         # execute a statement
         print('PostgreSQL database version:')
-        cur.execute('SELECT * from liftrocket_user')
+        cur.execute('SELECT version()')
 
         # display the PostgreSQL database server version
         db_version = cur.fetchone()
