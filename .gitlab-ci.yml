@@ -15,6 +15,7 @@ create_tables_latest:
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT version();"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/create_db.sql
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\l"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\dt"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\dt+"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/insert_dummy_data.sql
@@ -28,6 +29,7 @@ create_tables_961:
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT version();"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/create_db.sql
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\l"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\dt"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\dt+"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/insert_dummy_data.sql
@@ -42,6 +44,7 @@ create_tables_955:
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT version();"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/create_db.sql
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\l"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\dt"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\dt+"
   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f database/insert_dummy_data.sql
