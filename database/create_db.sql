@@ -1,7 +1,7 @@
 create extension if not exists "pgcrypto";
 create schema if not exists mcny;
 
-create table mcny.person (
+create table mcny.users (
     id uuid default gen_random_uuid(),
     legal_name varchar(400)
 );
