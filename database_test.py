@@ -11,7 +11,7 @@ from config import config, youtube
 def get_data():
     url = "https://www.googleapis.com/youtube/v3/videos"
     parameters = {'part': 'statistics',
-                  'id': 'c7rCyll5AeY',
+                  'id': 'zi_6oaQyckM',
                   'key': youtube()['key']}
     r = requests.get(url=url, params=parameters)
     data = r.json()
